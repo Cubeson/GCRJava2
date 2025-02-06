@@ -30,5 +30,9 @@ public final class HelloWorldController {
     model.addAttribute("service", service);
     return "index";
   }
+  @GetMapping("/tmp")
+  public String tmp(){
+    return "Testowy endpoint";
+  }
 
 }
