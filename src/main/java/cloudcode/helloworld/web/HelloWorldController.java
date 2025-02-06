@@ -1,7 +1,9 @@
 package cloudcode.helloworld.web;
 
+import com.google.api.client.http.HttpResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,8 +33,8 @@ public final class HelloWorldController {
     return "index";
   }
   @GetMapping("/tmp")
-  public String tmp(){
-    return "Testowy endpoint";
+  public ResponseEntity<String> tmp(){
+    return new ResponseEntity<String>("Testowy Endpoint", null, 200);
   }
 
 }
